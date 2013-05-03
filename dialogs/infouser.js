@@ -13,7 +13,7 @@ openInfoUserDialog = function(userid) {
   }
 };
 Template.infoUserDialog.events({
-  'click .cancel': function () {
+  'click .infouser .cancel': function () {
     Session.set("showInfoUserDialog", false);
     return false;
   }

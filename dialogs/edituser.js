@@ -12,14 +12,14 @@ openEditUserDialog = function(userid) {
   }
 };
 Template.editUserDialog.events({
-  'click .save': function (event, template) {
+  'click .edituser .save': function (event, template) {
     if ($("form.edituser :input").jqBootstrapValidation("hasErrors")) {
       return;
     }
     var username = $.trim(template.find(".username").value);
     var email = template.find(".email").value;
     var roles = [];
-    $('input[name=roles]:checked').each(function() {
+    $('form.edituser input[name=roles]:checked').each(function() {
       roles.push($(this).val());
     });
 
@@ -43,7 +43,7 @@ Template.editUserDialog.events({
     return false;
   },
 
-  'click .cancel': function () {
+  'click .edituser .cancel': function () {
     Session.set("showEditUserDialog", false);
     return false;
   }

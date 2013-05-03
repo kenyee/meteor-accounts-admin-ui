@@ -68,14 +68,14 @@ function getUIDFromEvent(event)
 
 var timerid = null;
 Template.adminusers.events({
-  'keypress .search-query': function(event) {
+  'keypress .adminusersbar .search-query': function(event) {
     if (event.charCode == 13) {
 	alert('you hit enter');
 	event.stopPropagation();
 	return false;
     }
   },
-  'keyup .search-query': function(event, template) {
+  'keyup .adminusersbar .search-query': function(event, template) {
     clearTimeout(timerid);
     timerid = setTimeout(function() {
 	var search = template.find(".search-query").value;
@@ -83,19 +83,19 @@ Template.adminusers.events({
       }, 1000);
     return false;
   },
-  'click .icon-trash': function(event, template) {
+  'click .adminusers .icon-trash': function(event, template) {
     var id = getUIDFromEvent(event);
     if (id) {
       openDeleteUserDialog(id);
     }
   },
-  'click .icon-edit': function(event, template) {
+  'click .adminusers .icon-edit': function(event, template) {
     var id = getUIDFromEvent(event);
     if (id) {
       openEditUserDialog(id);
     }
   },
-  'click .icon-info-sign': function(event, template) {
+  'click .adminusers .icon-info-sign': function(event, template) {
     var id = getUIDFromEvent(event);
     if (id) {
       openInfoUserDialog(id);

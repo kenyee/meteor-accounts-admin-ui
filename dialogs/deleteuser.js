@@ -13,7 +13,7 @@ openDeleteUserDialog = function(userid) {
   }
 };
 Template.deleteUserDialog.events({
-  'click .confirm': function (event, template) {
+  'click .deleteuser .confirm': function (event, template) {
       if (AdminUser.deletingUser && !AdminUser.deletingUser(Session.get("dlgDeleteUserId"))) {
 	// returning false from deletingUser cancels delete
 	return false;
@@ -28,7 +28,7 @@ Template.deleteUserDialog.events({
     Session.set("showDeleteUserDialog", false);
     return false;
   },
-  'click .cancel': function () {
+  'click .deleteuser .cancel': function () {
     Session.set("showDeleteUserDialog", false);
     return false;
   }
