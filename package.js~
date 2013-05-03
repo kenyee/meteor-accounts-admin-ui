@@ -10,7 +10,6 @@ Package.on_use(function(api) {
   var path = Npm.require('path');
 
   api.add_files(path.join('common', 'user-helpers.js'), ['client', 'server']);
-  api.add_files(path.join('common', 'useradmin-collections.js'), ['client', 'server']);
 
   api.add_files(path.join('dialogs', 'deleteuser.html'), 'client');
   api.add_files(path.join('dialogs', 'deleteuser.js'), 'client');
