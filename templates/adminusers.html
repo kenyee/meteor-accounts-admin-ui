@@ -1,0 +1,62 @@
+<template name="adminusers">
+  {{#if showDeleteUserDialog}}
+    {{> deleteUserDialog}}
+  {{/if}}
+  {{#if showEditUserDialog}}
+    {{> editUserDialog}}
+  {{/if}}
+  {{#if showInfoUserDialog}}
+    {{> infoUserDialog}}
+  {{/if}}
+<div class="container">
+    <div class="navbar-search span3">
+    <input type="text" class="search-query" value="{{searchstring}}" placeholder="Search">
+    </div> 
+<table class="table table-striped table-condensed table-bordered">
+  <thead>
+    <tr>
+    <th class="span3">Name</th>
+    <th class="span1">Email</th>
+    <th>Roles</th>
+    <th>OAuth Services</th>
+  {{> customUserListHeaders}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+      {{#if isNotMe}}
+	<tr uid="{{_id}}">
+	<td style="white-space:nowrap">
+	  <i class="icon-trash"></i> <i class="icon-edit"></i> <i class="icon-info-sign"></i>
+	  {{profile.name}}</td>
+	<td>{{useremail}}</td>
+	<td>{{roles}}</td>
+	<td>
+	{{#if services}}
+	    <ul>
+	  {{#with services.twitter}}
+	    <li>Twitter: {{screenName}}}</li>
+	  {{/with}}
+	  {{#with services.google}}
+	    <li>GMail: {{name}}}</li>
+	  {{/with}}
+	  {{#with services.facebook}}
+	    <li>Facebook: {{username}}}</li>
+	  {{/with}}
+	    </ul>
+	{{/if}}
+	</td>
+    {{> customUserListFields}}
+	</tr>
+      {{/if}}
+    {{/each}}
+  </tbody>
+</table>
+</div>
+</template>
+
+<template name="adminuser">
+<div class="container">
+
+</div>
+</template>
