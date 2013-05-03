@@ -1,5 +1,5 @@
 Package.describe({
-  summary : "Extensable User Admin UI for Meteor"
+  summary : "Extensible User Admin UI for Meteor"
 });
 
 Package.on_use(function(api) {
