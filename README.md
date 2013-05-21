@@ -6,7 +6,7 @@ This is a User Admin UI for Meteor.js' Accounts.  It provides a way to add roles
 How to use
 ----------
 
-	mrt install accounts-admin-ui
+	mrt add accounts-admin-ui
 	
 	Add a call to createUserAdminRoles in your Meteor.startup code.
 	This will add the admin and user-admin roles (if you have custom roles for your
