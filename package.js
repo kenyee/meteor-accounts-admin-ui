@@ -23,4 +23,10 @@ Package.on_use(function(api) {
   api.add_files(path.join('templates', 'adminusers.js'), 'client');
 
   api.add_files(path.join('methods', 'adminusermethods.js'), 'server');
+
+  api.export && api.export('createUserAdminRoles', 'server');
+  api.export && api.export('bounceNonUserAdmin', 'server');
+  api.export && api.export('displayName');
+  api.export && api.export('contactEmail');
 });
+
