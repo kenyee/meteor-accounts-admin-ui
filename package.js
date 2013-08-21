@@ -3,9 +3,12 @@ Package.describe({
 });
 
 Package.on_use(function(api) {
+  // these two core packages have to be referenced as of Meteor 0.6.5
+  api.use('standard-app-packages', ['client', 'server']);
+
+  // other packages used
   api.use('jquery', 'client');
   api.use('bootstrap', 'client');
-  api.use('templating', 'client');
 
   var path = Npm.require('path');
 
@@ -24,8 +27,9 @@ Package.on_use(function(api) {
 
   api.add_files(path.join('methods', 'adminusermethods.js'), 'server');
 
+  // these exports should really have been done as UserAdmin.* methods :-(
   api.export && api.export('createUserAdminRoles', 'server');
-  api.export && api.export('bounceNonUserAdmin', 'server');
+  api.export && api.export('bounceNonUserAdmin', 'client');
   api.export && api.export('displayName');
   api.export && api.export('contactEmail');
 });
