@@ -8,6 +8,6 @@
   "packages": {
     "jquery-ui": "1.9.2",
     "jqbootstrapvalidation": "0.1.0",
-    "roles": "1.0.5"
+    "roles": "1.0.6"
   }
 }
