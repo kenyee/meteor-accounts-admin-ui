@@ -3,7 +3,7 @@
   "description": "Extensible Admin UI for Meteor accounts/users",
   "homepage": "https://github.com/kenyee/meteor-accounts-admin-ui",
   "author": "Ken Yee",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "git": "https://github.com/kenyee/meteor-accounts-admin-ui.git",
   "packages": {
     "jquery-ui": "1.9.2",

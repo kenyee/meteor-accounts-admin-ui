@@ -4,8 +4,9 @@ getAppUsers = function(regex, pagemax, curpage) {
   var userid = (Meteor.isClient) ? Meteor.userId() : this.userId;
   var user = Meteor.users.findOne({ _id: userid });
   if (!Roles.userIsInRole(user, ['admin','user-admin'])) {
-    // user can't get list of users because they're not an admin, so return null for collection
-    return null;
+    // user can't get list of users because they're not an admin
+    // so notify Meteor that we're done with the collection
+    return this.ready();
   }
   var users = null;
   if (regex) {
