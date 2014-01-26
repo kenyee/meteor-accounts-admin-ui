@@ -9,6 +9,7 @@ Package.on_use(function(api) {
   // other packages used
   api.use('jquery', 'client');
   api.use('bootstrap', 'client');
+  api.use('jqbootstrapvalidation', 'client');
   api.use('roles', ['client', 'server']);
 
   var path = Npm.require('path');
