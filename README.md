@@ -89,6 +89,7 @@ Using Mini-Pages Package
 	the user to "/" if the user-admin or admin roles are not detected.
 
 Using Iron-Router Package
+-------------------------
 
 	In your iron-router configuration, add this:
 		Router.configure({
