@@ -20,11 +20,7 @@
 	  <label>Roles</label>
 	  {{#each roles}}
 	  <label>
-	    <input type="checkbox" name="roles" value="{{name}}"
-	    {{#if hasrole}}
-	      checked
-	    {{/if}}
-	    >
+	    <input type="checkbox" name="roles" value="{{name}}" checked={{hasrole}}>
 	    {{name}}
 	  </label>
 	  {{/each}}
