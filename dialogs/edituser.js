@@ -67,5 +67,8 @@ Template.editUserDialog.helpers({
   },
   hasrole: function() {
     return Roles.userIsInRole(Template.editUserDialog.user, this.name);
+  },
+  checked: function() {
+    return Roles.userIsInRole(Template.editUserDialog.user, this.name)?"checked":"";
   }
 });
