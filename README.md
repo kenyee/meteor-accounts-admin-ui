@@ -115,7 +115,7 @@ In your iron-router configuration, add this:
 		  this.route('admin', {
 		    path: '/admin',
 		    template: 'adminusers',
-		    before: function() {
+		    onBeforeAction: function() {
 		      if (!Roles.userIsInRole(Meteor.user(), ['admin','user-admin'])) {
 		        this.redirect("/");
 		      }
